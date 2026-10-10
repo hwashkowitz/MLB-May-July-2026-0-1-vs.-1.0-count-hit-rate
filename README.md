@@ -27,7 +27,11 @@ While that p-value does not completely invalidate the results, it does cast doub
 
 # Files
 "OhOneMJ.csv": 0-1 count from May 1 to June 14
+
 "OhOneJJ.csv": 0-1 count from June 15 to July 31
+
 "OneOhMJ.csv": 1-0 count from May 1 to June 14
+
 "OneOhJJ.csv": 1-0 count from June 15 to July 31
+
 "RegSeasonHits01-10.R": the script I ran
