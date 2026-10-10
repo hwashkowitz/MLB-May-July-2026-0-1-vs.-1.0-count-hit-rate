@@ -7,22 +7,23 @@ When new data ceased flowing from the Yankees, I decided to go back to the core 
 Soon after, I updated the research question from that project to the regular season.
 
 # Research Question
-How does the hit rate change on the pitches thrown on a 1-0 count versus an 0-1 count?
+How does the hit-per-pitch rate change on the pitches thrown on a 1-0 count versus an 0-1 count?
 
 # Methodology
 I used Baseball Savant's Statcast to pull all of the pitches thrown on 1-0 and 0-1 counts from May 1 to July 31. 
 This time, I had to splice the files together, because Statcast limits the number of pitches in one file to 25,000 pitches. 
-For simplicity, I had two .CSV file from May 1 to June 14 (one for 0-1 and one for 1-0), and two .CSV files from June 15 to July 31. 
-I named the files "OhOneMJ.csv" for the 
-0-1 count from May to June; "OhOneJJ.csv" for the 0-1 count from June to July; "OneOhMJ.csv" for the 1-0 count from May to June and "OneOhJJ.csv" for the 1-0 count from June to July.
+For simplicity, I had two .CSV files from May 1 to June 14 (one for 0-1 and one for 1-0), and two .CSV files from June 15 to July 31. 
+I named the files "OhOneMJ.csv" for the 0-1 count from May to June; "OhOneJJ.csv" for the 0-1 count from June to July; "OneOhMJ.csv" for the 1-0 count from May to June and "OneOhJJ.csv" for the 1-0 count from June to July.
+I defined a "hit" as a single, double, triple, or home run.
 I then used R Studio to make variables with all of the hits on the two counts after combining the files, and used a variable that indicated a hit to limit the pitch number to just the hits.
 From there, I did some quick division, ran p-values on the results, and got my answer.
 
 # Results
 The division showed that on the 0-1 count, 5.59% of pitches resulted in a hit, while for the 1-0 count, 5.30% of pitches resulted in a hit. 
-Those numbers are quite close together, but it is a difference.
-Unfortunately, the 95% confidence interval was from -0.03 to +0.61 percentage points, just outside the range I would have liked to see. 
-While that p-value does not completely invalidate the results, it does cast doubt on their accuracy and makes it hard to justify using this data in a real setting.
+Those numbers are quite close together, and the test can't rule out chance.
+Unfortunately, the 95% confidence interval was from -0.03 to +0.61 percentage points, just outside the range I would have liked to see--ideally 0 would not have been included. 
+The p-value was p = 0.079, also higher than optimal.
+While that p-value does not completely invalidate the results, it does cast doubt on their difference and makes it hard to justify using this data in a real setting.
 
 # Files
 "OhOneMJ.csv": 0-1 count from May 1 to June 14
